@@ -1,0 +1,73 @@
+.modal__backdrop {
+  z-index: -1;
+  transform: scale(0);
+  opacity: 0;
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($c__dark, 0);
+  transition-property: background-color, opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: ease('out-quad');
+
+  .modal-is-active & {
+    z-index: 500;
+    background-color: rgba($c__dark, 0.8);
+    transform: scale(1) ;
+    opacity: 1;
+  }
+}
+
+.modal {
+  position: absolute;
+  opacity: 0;
+  left: 50%;
+  top: -100vh;
+  transform: translate(-50%, 0);
+  transition-property: transform, opacity, top;
+  transition-duration: 0.275s;
+  transition-timing-function: ease('out-quad');
+  max-width: 100vw;
+  max-height: 70vh;
+  overflow: hidden;
+  @media (min-width: map-get($breakpoints, 'lg')) {
+    width: map-get($breakpoints, 'md');
+  }
+  @media (min-width: map-get($breakpoints, 'xl')) {
+    width: map-get($breakpoints, 'xl');
+  }
+
+  &__content {
+    background-color: $c__lightest;
+    padding: $padding-base;
+    overflow: auto;
+  }
+
+  &__header {
+    padding-bottom: $padding-base;
+    border-bottom: 1px solid $c__border;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+  }
+
+  &__close {
+    @extend .button--close;
+  }
+
+  &__body {
+    padding-top: $padding-base;
+  }
+
+  .modal-is-active & {
+    opacity: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+  }
+}

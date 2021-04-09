@@ -1,0 +1,26 @@
+.sidebar-toggle {
+  position: fixed;
+  top: 2em;
+  left: 0rem;
+  width: 2rem;
+  height: 2rem;
+  z-index: 499;
+  transition-property: left;
+  transition-duration: 0.325s;
+  transition-timing-function: ease('in-out-quad');
+  transform: rotateY(0);
+  text-decoration: none;
+  padding: 0.5em;
+  color: #444;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: #fff;
+    background-color: #444;
+  }
+
+  .nav-active & {
+    left: 2rem;
+  }
+}

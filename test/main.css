@@ -1,0 +1,49 @@
+/**
+ * Styleguide Template
+ *
+ * A simple style guide, meant less for engineers, and more for stakeholders.
+ *
+ * Styleguide: Template
+ */
+
+/**
+ * Example
+ *
+ * This is an example component.
+ *
+ * Markup:
+ * <div class="example">Example</div>
+ *
+ * Styleguide: styleguide.example
+ */
+
+/**
+ * Example 2
+ *
+ * This is a second component.
+ *
+ * Markup:
+ * <div class="example2 {{modifier_class}}">Example 2</div>
+ *
+ * .test-blue - Blue Style
+ * .test-red  - Red Style
+ *
+ * Styleguide: styleguide.example2
+ */
+
+.example2 {
+
+  border: 1rem solid #dedede;
+  background-color: #eee;
+  padding: 0.5rem;
+}
+.example2.test-blue {
+    border: 1rem solid #0af;
+    background-color: #eee
+  }
+
+.example2.test-red {
+    border: 1rem solid #f00;
+    background-color: #eee
+  }
+}

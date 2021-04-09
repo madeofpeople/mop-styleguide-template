@@ -1,0 +1,20 @@
+<div class="kss-modifier__wrapper">
+  {% if section.modifiers is not empty %}
+
+  <h3>Modifiers for {{ section.header }}</h3>
+
+  <div class="kss-modifiers-list">
+    {% for modifier in section.modifiers %}
+      <div class="kss-modifier__name kss-style">
+        {{ modifier.name }}
+      </div>
+      <div class="kss-modifier__description kss-style">
+        {{ modifier.description|raw }}
+      </div>
+      <div class="kss-modifier__example">{{ modifier.markup|raw }}</div>
+      <div class="kss-modifier__example-footer"></div>
+    {% endfor %}
+  </div>
+
+  {% endif %}
+</div>

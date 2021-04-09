@@ -1,0 +1,106 @@
+.kss-sidebar {
+  position: fixed;
+  top: 0;
+  left: -20vw;
+  width: 20vw;
+  z-index: 500;
+  height: 100%;
+  overflow-y: auto;
+  transition-property: left, transform, box-shadow;
+  box-shadow: 3px 3px 24px rgba(0, 0, 0, 0.3);
+  perspective: 1800px;
+  transition-duration: 0.225s;
+  transition-timing-function: ease('out-quad');
+  perspective-origin: top left;
+  transform-style: preserve-3d;
+  transform: rotateY(90deg);
+  backface-visibility: hidden;
+  background-color: $c__mid;
+  color: $c__light;
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  a {
+    display: block;
+    padding: 1.5rem 2rem;
+    text-decoration: none;
+    &:visited {
+      color: $c__sidebar-link;
+    }
+  }
+
+  .kss-nav__menu-child {
+    @extend %offscreen;
+    overflow: hidden;
+    max-height: 0;
+    transition-property: max-height;
+    transition-duration: 0.25s;
+    transition-timing-function: ease('out-quad');
+    box-shadow: inset 0 0.3333rem 0.5rem -0.5rem rgba(black, 0.3);
+    max-height: 0;
+    overflow: hidden;
+
+    a {
+      padding-left: 4em;
+    }
+
+    &.active {
+      max-height: 100%;
+    }
+  }
+
+  .kss-nav__menu,
+  .kss-nav__menu-child {
+    border-top: 1px solid $c__border--inv;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .kss-nav__menu-item   {
+      margin: 0;
+      padding: 0;
+      border-bottom: 1px solid $c__border--inv;
+
+      &.active {
+        outline: none;
+        background-color: $c__light;
+        a {
+          color: $c__mid;
+        }
+        .kss-nav__menu-child {
+          @extend %onscreen;
+
+          max-height: 3000px;
+        }
+      }
+      a:hover {
+        background-color: $c__darkest;
+        color: $c__lightest;
+      }
+    }
+  }
+
+  .kss-nav__menu-child {
+    li a {
+      background-color: $c__light;
+    }
+  }
+
+  .kss-nav__menu-child-actuator {
+    display: inline-block;
+    position: absolute;
+    right: 1.5rem;
+    color: $c__widget;
+  }
+
+  &.active {
+    left: 0;
+    transform: rotateY(0);
+  }
+
+  @media (min-width: map-get($breakpoints, md)) {
+      left: 0;
+  }
+}

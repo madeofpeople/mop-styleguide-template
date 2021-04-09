@@ -1,0 +1,8 @@
+{
+	"builder": "../",
+	"source": [
+		"."
+	],
+	"destination": "out",
+	"homepage": "homepage.md"
+}

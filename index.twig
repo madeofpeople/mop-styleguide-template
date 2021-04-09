@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title> {{options.title}}</title>
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+  <!-- these are compiled by webpack, and additional styles and scripts should be configured in the weback config -->
+  <link rel="stylesheet" href="kss-assets/css/styles.css">
+</head>
+<body id="kss-node" class="{% if homepage %}homepage {% endif %}{% if template.isItem %} kss-fullscreen-mode{% endif %}">
+<main role="main" id="kss-main" class="main">
+  <article class="content">
+    {% if homepage %}
+      <section id="kssref-0" class="kss-overview">
+        {{ homepage|raw }}
+      </section>
+    {% else %}
+      {% for section in sections %}
+        {% if section.depth == 1 %}
+          {% include "@builderTwig/src/components/molecules/page_header.twig" %}
+          {% if "color-swatches" in section.reference %}
+            {% include "@builderTwig/src/components/molecules/color_grid.twig" with section only %}
+          {% endif %}
+        {% else %}
+          {% include "@builderTwig/src/components/molecules/section.twig" %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </article>
+  {% include "@builderTwig/src/components/atoms/sidebar_toggle.twig" %}
+  {% include "@builderTwig/src/components/organisms/sidebar.twig" %}
+</main>
+<script src="kss-assets/scripts.js"></script>
+</body>
+</html>

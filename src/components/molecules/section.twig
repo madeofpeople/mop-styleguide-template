@@ -1,0 +1,48 @@
+<section id="kssref-{{ section.referenceURI }}" class="kss-section kss-section--depth-{{ section.depth }} {% if template.isItem %}is-fullscreen{% endif %}">
+  <div class="container">
+    <div class="kss-style">
+
+      {% include "@builderTwig/src/components/molecules/section_heading.twig" %}
+
+      {% if section.description %}
+        <div class="kss-description">
+          {{ section.description|raw }}
+        </div>
+      {% endif %}
+
+      {% if "color-swatches" in section.reference|split(".") %}
+
+        {% include "@builderTwig/src/components/molecules/color_grid.twig" with section only %}
+
+      {% else %}
+
+        {% for parameter in section.parameters %}
+          {% if loop.first %}
+            <div class="kss-parameters__title">Parameters:</div>
+            <ul class="kss-parameters">
+          {% endif %}
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>{{ parameter.name }}</code></div>
+              <div class="kss-parameters__description">
+                {{ parameter.description|raw }}
+                {% if parameter.defaultValue %}
+                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>{{ parameter.defaultValue }}</code>
+                  </div>
+                {% endif %}
+              </div>
+            </li>
+          {% if loop.last %}
+            </ul>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    {% include "@builderTwig/src/components/molecules/component_details.twig" %}
+
+    {% if section.sourceFile.name %}
+      {% include "@builderTwig/src/components/atoms/source_reference.twig" %}
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,27 @@
+%color-swatch {
+  box-sizing: border-box;
+  padding: 1em;
+
+  .card {
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    padding: 1em 1em 0.75em 1em;
+  }
+
+  .example {
+    height: 10em;
+  }
+
+  .info {
+    padding-top: 1em;
+
+    p {
+      margin: 0;
+      margin-bottom: 0.25em;
+      font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+    }
+  }
+}
+
+.color-swatch {
+  @extend %color-swatch;
+}

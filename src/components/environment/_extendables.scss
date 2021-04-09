@@ -1,0 +1,25 @@
+%offscreen {
+  position: absolute;
+  left: -10000px;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+}
+
+%onscreen {
+  position: relative;
+  left: 0;
+  overflow: visible;
+  width: auto;
+  height: auto;
+  white-space: normal;
+}
+
+%clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

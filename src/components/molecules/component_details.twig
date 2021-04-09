@@ -1,0 +1,21 @@
+<div class="component_details">
+{% if section.example %}
+  <div class="kss-default__example">
+    {{ section.example|raw }}
+  </div>
+  {% if section.modifiers is not empty %}
+    {% include "@builderTwig/src/components/molecules/modifiers.twig" %}
+  {% endif %}
+  {% if section.markup %}
+    {% include "@builderTwig/src/components/molecules/markup.twig" %}
+  {% endif %}
+  <div class="controls">
+    {% if section.modifiers is not empty %}
+      <a class="modifiers_toggle" href="#">Modifiers</a>
+    {% endif %}
+    {% if section.markup %}
+      <a class="markup_toggle" href="#">Markup</a>
+    {% endif %}
+  </div>
+{% endif %}
+</div>

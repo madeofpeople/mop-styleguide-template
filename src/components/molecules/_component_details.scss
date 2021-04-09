@@ -1,0 +1,22 @@
+.component_details {
+  .controls {
+    @extend %clearfix;
+
+    a {
+      display: inline-block;
+      font-size: 0.87em;
+      color: $c__lightest;
+      background: $c__mid;
+      margin-right: 1em;
+      padding: 0.125em 0.5em;
+      text-decoration: none;
+ 
+      &:focus,
+      &:hover,
+      &:active {
+        color: $c__highlight;
+        background: $c__darkest;
+      }
+    }
+  }
+}

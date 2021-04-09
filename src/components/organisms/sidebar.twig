@@ -1,0 +1,42 @@
+<aside class="kss-sidebar kss-style">
+
+  <button class="button--close">Close Menu</button>
+
+  {% include "@builderTwig/src/components/atoms/sidebar_header.twig" %}
+
+  <nav class="kss-nav">
+
+    <ul class="kss-nav__menu">
+
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="./index.html">
+          <span class="kss-nav__name">Overview</span>
+        </a>
+      </li>
+
+      {% for menu_item in menu %}
+        <li class="kss-nav__menu-item  {% if menu_item.isActive %}active{% endif %}" data-section="{{ menu_item.header }}">
+          <a class="kss-nav__menu-link" href="section-{{ menu_item.referenceURI }}.html">
+            <span class="kss-nav__name">{{ menu_item.header }}</span>
+            {% if menu_item.children is not empty %}
+            <span class="kss-nav__menu-child-actuator">☰</span>
+            {% endif %}
+          </a>
+
+          {% if menu_item.children is not empty %}
+            <ul class="kss-nav__menu-child">
+            {% for menu_child in menu_item.children %}
+              <li class="kss-nav__menu-item {% if menu_child.isActive %}active{% endif %}">
+                <a class="kss-nav__menu-link" href="section-{{ menu_item.referenceURI }}.html#kssref-{{ menu_child.referenceURI }}">
+                  <span class="kss-nav__name">{{ menu_child.header }}</span>
+                </a>
+              </li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</aside>

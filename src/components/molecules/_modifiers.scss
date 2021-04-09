@@ -1,0 +1,45 @@
+.kss-modifier__wrapper {
+  @extend %offscreen;
+
+  border: 1px solid $c__border;
+  padding: 0.75em;
+  margin-bottom: 0;
+}
+
+.kss-modifier__example {
+  @extend .kss-example;
+
+  margin-bottom: 2em;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.kss-modifier__heading {
+  margin: -10px -10px 10px -10px;
+  padding: 10px;
+  border-bottom: 1px solid $c__border;
+  background-color: #eee;
+  font-weight: bold;
+}
+
+.kss-modifier__default-name {
+  font-weight: bold;
+  margin-bottom: ($t__line-height/ 2);
+}
+
+.kss-modifier__name,
+.kss-modifier__description {
+  font-size: 0.75em;
+}
+
+.kss-modifier__name {
+  float: left;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+.kss-modifier__description {
+  margin-bottom: ($t__line-height / 2);
+}

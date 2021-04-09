@@ -1,0 +1,24 @@
+.title-block {
+  position: relative;
+  .kss-title__permalink {
+    position: absolute;
+    font-size: 0.75rem;
+    top: 0.5rem;
+    left: -2rem;
+    text-decoration: none;
+  }
+  .contextual_menu__actuator {
+    a {
+      display: inline-block;
+      width: 1em;
+
+      &:hover {
+        background: #eee;
+        text-decoration: none;
+      }
+    }
+  }
+}
+.kss-section--depth-1 .title-block .kss-title__permalink {
+  top: 1rem;
+}

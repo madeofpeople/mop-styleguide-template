@@ -1,0 +1,12 @@
+<header id="kssref-{{ section.referenceURI }}" class="kss-section kss-section--depth-{{ section.depth }}">
+  <div class="container">
+    <div class="kss-style">
+      {% include "@builderTwig/src/components/molecules/section_heading.twig" %}
+      {% if section.description %}
+        <div class="kss-description">
+          {{ section.description|raw }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</header>

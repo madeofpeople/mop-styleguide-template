@@ -1,0 +1,8 @@
+{
+	"builder": "..",
+	"source": [
+		"./main.css"
+	],
+	"destination": "out",
+	"homepage": "homepage.md"
+}

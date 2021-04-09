@@ -1,0 +1,34 @@
+
+.kss-default__example {
+  @extend %clearfix;
+
+  border: 1px #dedede solid;
+  margin-top: 1em;
+  padding: 1em;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.kss-example {
+  @extend %clearfix;
+
+  position: relative;
+}
+
+#kss-main > .kss-example {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.kss-example::after,
+.kss-example::before {
+  clear: both;
+  content: " ";
+  display: table;
+}
+
+.kss-section {
+  @extend %clearfix;
+
+  padding: 2em;
+}
