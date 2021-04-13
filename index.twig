@@ -21,7 +21,7 @@
         {% if section.depth == 1 %}
           {% include "@builderTwig/src/components/molecules/page_header.twig" %}
           {% if "color-swatches" in section.reference %}
-            {% include "@builderTwig/src/components/molecules/color_grid.twig" with section only %}
+            {% include "@builderTwig/src/components/organisms/color_grid.twig" with section only %}
           {% endif %}
         {% else %}
           {% include "@builderTwig/src/components/molecules/section.twig" %}
